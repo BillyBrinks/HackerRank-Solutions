@@ -5,6 +5,10 @@ import java.text.*;
 import java.math.*;
 import java.util.regex.*;
 
+/*Given a square matrix, calculate the absolute 
+ *difference between the sums of its diagonals.
+ */
+
 public class Diagonal_Difference {
 	
 	public static void main(String[] args) {
