@@ -43,7 +43,7 @@ public class Array_Manipulation {
                         array[b]-=k;
                     }
             }
-
+            //find the highest point of the array and return it, done!
             for (long x : array){
                 currSlope += x;
                 biggest = Math.max(biggest, currSlope);
