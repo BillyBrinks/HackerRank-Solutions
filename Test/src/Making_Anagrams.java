@@ -9,15 +9,35 @@ import java.util.regex.*;
 public class Making_Anagrams {
 	// Complete the makeAnagram function below.
     static int makeAnagram(String a, String b) {
-        char[] first = a.toCharArray();
-        char[] second = b.toCharArray();
-        boolean contains = false;
-        int count = 0;
-        
-       
-    	
-    	
-    }
+    	  StringBuilder first = new StringBuilder(a);
+          StringBuilder second = new StringBuilder(b);
+          
+          for (int i = 0; i < first.length(); i++) {
+              if(contains(first.charAt(i), second)) {
+                  first.deleteCharAt(i);
+                  i--;
+              }
+          }
+          
+          for (int i = 0; i < second.length(); i++) {
+              if(contains(second.charAt(i), first)) {
+                  second.deleteCharAt(i);
+                  i--;
+              }
+          }
+         
+          return first.length() + second.length();
+      }
+      
+      static boolean contains (char x, StringBuilder s) { 
+          for (int i = 0; i < s.length(); i++) {
+              if (s.charAt(i) == x) {
+                  s.deleteCharAt(i);
+                  return true;
+              }
+          }
+          return false;
+      }
 
     private static final Scanner scanner = new Scanner(System.in);
 
